@@ -28,14 +28,14 @@ if __name__ == "__main__":
     df_test = pd.read_csv(TEST_DATA)  #- test
 
 
-    train_df = df[df.kfold.isin(FOLD_MAPPPING.get(FOLD))].reset_index(drop=True)
-    valid_df = df[df.kfold==FOLD].reset_index(drop=True)
+    train_df = df[df.fold.isin(FOLD_MAPPPING.get(FOLD))].reset_index(drop=True)
+    valid_df = df[df.fold==FOLD].reset_index(drop=True)
 
     ytrain = train_df.target.values 
     yvalid = valid_df.target.values 
 
-    train_df = train_df.drop(["id",'target','kfold'], axis=1)
-    valid_df = valid_df.drop(['id','target','kfold'], axis=1)
+    train_df = train_df.drop(["id",'target','fold'], axis=1)
+    valid_df = valid_df.drop(['id','target','fold'], axis=1)
 
 
     valid_df = valid_df[train_df.columns]
