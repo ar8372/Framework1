@@ -8,7 +8,7 @@ import joblib
 
 from . import dispatcher 
 
-# get as env variable
+# get as env variable # We remove it for making inference kernel
 # TEST_DATA = os.environ.get("TEST_DATA") #changed to test_data_path
 # MODEL = os.environ.get("MODEL") # changed to model_type
 
